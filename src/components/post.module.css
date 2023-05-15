@@ -1,0 +1,5 @@
+.post_container {
+    margin: calc(var(--nav_height) + 4rem) auto;
+    min-height: 100vh;
+    width: min(70vw, 700px);
+}
