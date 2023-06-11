@@ -1,6 +1,7 @@
+import { Container, Stack } from "@mui/material";
 import { graphql } from "gatsby";
 import * as React from "react";
-import Jumbotron from '../components/jumbotron';
+import FeaturedArticles from "../components/featuredArticles";
 import LatestArticles from '../components/latestArticles';
 import Layout from '../components/layout';
 
@@ -10,8 +11,12 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout pageTitle="crossdot">
-      <Jumbotron />
-      <LatestArticles articles={articles} />
+      <Container maxWidth="lg" >
+        <Stack spacing={5}>
+          <FeaturedArticles articles={articles} />
+          <LatestArticles articles={articles} />
+        </Stack>
+      </Container>
     </Layout>
 
   )
@@ -31,6 +36,14 @@ export const query = graphql`
                         slug
                         title
                         summary
+                        featured
+                        featuredImage {
+                          childImageSharp {
+                            gatsbyImageData(
+                              width: 800
+                            )
+                          }
+                        }
                     }
                 }
             }

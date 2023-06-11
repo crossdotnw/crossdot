@@ -14,14 +14,22 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.4",
     "gatsby": "^5.8.1",
     "gatsby-omni-font-loader": "^2.0.2",
-    "gatsby-plugin-image": "^3.8.0",
-    "gatsby-plugin-sharp": "^5.8.1",
-    "gatsby-source-filesystem": "^5.9.0",
+    "gatsby-plugin-image": "^3.10.0",
+    "gatsby-plugin-manifest": "^5.10.0",
+    "gatsby-plugin-sharp": "^5.10.0",
+    "gatsby-remark-images": "^7.10.0",
+    "gatsby-source-filesystem": "^5.10.0",
     "gatsby-transformer-remark": "^6.9.0",
+    "gatsby-transformer-sharp": "^5.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-material-ui-carousel": "^3.4.2"
   }
 }

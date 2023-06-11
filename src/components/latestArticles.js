@@ -1,19 +1,23 @@
+import { Button, Container, Grid, Typography } from "@mui/material";
+import { Link } from "gatsby";
 import * as React from "react";
 import ArticleCard from './articleCard';
-import { latest_article_card_container, latest_article_container } from "./latestArticles.module.css";
 
 const LatestArticles = ({ articles }) => {
     return (
-        <div>
-            <div className={latest_article_container}>
-                <h1>Latest Articles</h1>
-                <div className={latest_article_card_container}>
-                    {articles.nodes.map(article => (
+        <Container maxWidth="lg" >
+            <Typography variant="h2" textAlign="center" gutterBottom>Latest Articles</Typography>
+            <Grid container spacing={5} sx={{ mb: 5 }}>
+                {articles.nodes.map(article => (
+                    <Grid item xs={12} md={6} key={article.id}>
                         <ArticleCard article={article.frontmatter} />
-                    ))}
-                </div>
-            </div>
-        </div>
+                    </Grid>
+                ))}
+            </Grid >
+            <Typography align="center">
+                <Link to="/articles"><Button size="large">See More</Button></Link>
+            </Typography>
+        </Container >
     )
 }
 

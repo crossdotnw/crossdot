@@ -1,14 +1,10 @@
+import { Box } from "@mui/material"
 import * as React from "react"
-import { footer_border, footer_contents } from "./footer.module.css"
 
 const Footer = () => {
     return (
-        <footer>
-            <div className={footer_border} />
-            <div className={footer_contents}>
-
-            </div>
-        </footer>
+        <Box sx={{ bgcolor: 'primary.main', color: 'common.white', py: 2, px: 3, mt: 5 }}>
+        </Box>
     )
 }
 

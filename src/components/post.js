@@ -1,13 +1,12 @@
+import { Container } from '@mui/material';
 import * as React from 'react';
-
-import { post_container } from './post.module.css';
 
 const Post = ({ children }) => {
 
     return (
-        <div className={post_container}>
+        <Container maxWidth='md' sx={{ mt: 5 }}>
             {children}
-        </div>
+        </Container>
     )
 }
 

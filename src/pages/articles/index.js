@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import { graphql } from "gatsby";
 import * as React from "react";
 import ArticlesList from "../../components/articlesList";
@@ -11,7 +12,9 @@ export default function BlogPostTemplate({ data }) {
 
     return (
         <Layout pageTitle="Articles">
-            <ArticlesList articles={articles} />
+            <Container maxWidth='lg'>
+                <ArticlesList articles={articles} />
+            </Container>
         </Layout >
     )
 
@@ -28,6 +31,8 @@ export const query = graphql`
                         slug
                         title
                         summary
+                        featured
+                        author
                     }
                 }
             }

@@ -1,42 +1,68 @@
+import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Box, Button, Container, Drawer, IconButton, List, ListItem, ListItemButton, Toolbar, Typography } from '@mui/material';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import * as React from 'react';
-import { close, expanded, hamburger, nav_header, nav_item, nav_logo, nav_menu } from './nav.module.css';
-
+import React from 'react';
 const Nav = () => {
 
-    const [isExpanded, toggleExpansion] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const handleToggleExpension = () => {
-        toggleExpansion(!isExpanded);
-    }
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
+
 
     return (
-        <nav>
-            <h1 className={nav_header}>crossdot</h1>
-            <ul>
-                <li><Link to="/" className={nav_item}>Home</Link></li>
-                <li><Link to="/about" className={nav_item}>About</Link></li>
-                <li><Link to="/articles" className={nav_item}>Articles</Link></li>
-            </ul>
-            <StaticImage alt="crossdot logo" src='../images/crossdot.svg' style={{ maxWidth: "4rem" }} className={nav_logo} placeholder='none' />
-            <button className={hamburger} onClick={handleToggleExpension}>
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <AppBar position='sticky'>
+            <Container maxWidth="lg">
+                <Toolbar disableGutters>
 
-            <div className={`${nav_menu} ${isExpanded ? expanded : null}`}>
-                <ul>
-                    <button className={close} onClick={handleToggleExpension}>
-                        <StaticImage alt="close" src='../images/cross.png' style={{ maxWidth: "1rem" }} placeholder='none' />
-                    </button>
-                    <li><Link to="/" className={nav_item}>Home</Link></li>
-                    <li><Link to="/about" className={nav_item}>About</Link></li>
-                    <li><Link to="/articles" className={nav_item}>Articles</Link></li>
-                </ul>
-            </div>
-        </nav >
+                    <Link to="/"><StaticImage alt="crossdot logo" src="../images/crossdot.svg" style={{ maxWidth: "6rem" }} /></Link>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
+                        <IconButton size="large" color='inherit' onClick={handleDrawerToggle} edge="end">
+                            <MenuIcon />
+                        </IconButton>
+                        <Drawer
+                            variant='temporary'
+                            open={mobileOpen}
+                            onClose={handleDrawerToggle}
+                            ModalProps={{
+                                keepMounted: true,
+                            }}
+                            sx={{
+                                display: { xs: 'block', md: 'none' },
+                                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+                            }}
+                        >
+                            <Box >
+                                <List>
+                                    <ListItem>
+                                        <ListItemButton>
+                                            <Link to="/articles/about-us" style={{ textDecoration: 'none' }}><Typography variant='body1' color="primary.main" textTransform='uppercase'>About</Typography></Link>
+                                        </ListItemButton>
+                                    </ListItem>
+                                    <ListItem>
+                                        <ListItemButton>
+                                            <Link to="/articles" style={{ textDecoration: 'none' }}><Typography variant='body1' color="primary.main" textTransform='uppercase'>Articles</Typography></Link>
+                                        </ListItemButton>
+                                    </ListItem>
+                                </List>
+                            </Box>
+                        </Drawer>
+                    </Box>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+                        <Button>
+                            <Link to="/articles/about-us" style={{ textDecoration: 'none' }}><Typography variant='body1' color="common.white">About</Typography></Link>
+                        </Button>
+                        <Button>
+                            <Link to="/articles" style={{ textDecoration: 'none' }}><Typography variant='body1' color="common.white">Articles</Typography></Link>
+                        </Button>
+                    </Box>
+
+
+                </Toolbar>
+            </Container>
+        </AppBar>
     )
 }
 
