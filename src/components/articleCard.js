@@ -9,17 +9,19 @@ const ArticleCard = ({ article, featured, showImage }) => {
     const image = article.featuredImage && getImage(article.featuredImage.childImageSharp.gatsbyImageData)
 
     return (
-        <Card sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "end" }}>
-            {showImage && <GatsbyImage image={image} alt={article.title} />}
-            <CardContent>
-                <Typography variant={featured ? "h2" : "h5"} >{article.title}</Typography>
-                <Typography variant="body2" color="text.secondary" gutterBottom>{article.date}</Typography>
-                <Typography variant="body1" color="text.secondary">{article.summary}</Typography>
-            </CardContent>
-            <CardActions>
-                <Link to={slug}><Button size="large">Read More</Button></Link>
-            </CardActions>
-        </Card>
+        <Link to={slug} style={{textDecoration: "none"}}>
+            <Card sx={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "end" }}>
+                {showImage && <GatsbyImage image={image} alt={article.title} />}
+                <CardContent>
+                    <Typography variant={featured ? "h2" : "h5"} >{article.title}</Typography>
+                    <Typography variant="body2" color="text.secondary" gutterBottom>{article.date}</Typography>
+                    <Typography variant="body1" color="text.secondary">{article.summary}</Typography>
+                </CardContent>
+                <CardActions>
+                    <Button size="large">Read More</Button>
+                </CardActions>
+            </Card>
+        </Link>
     )
 }
 
