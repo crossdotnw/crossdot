@@ -1,6 +1,9 @@
 ---
-slug: "my-second-blog-post"
-date: "2022-11-25"
-title: "My second blog post"
-summary: "In this blog post we test to see if the page renders correctly"
+slug: "python-intro"
+date: "2023-06-11"
+title: "Introduction to the Python Language"
+summary: "Learn the foundations of the Python programming language!"
+featuredImage: "../images/intro_to_python/landing.jpg"
+featured: True
+author: Sam Ball
 ---

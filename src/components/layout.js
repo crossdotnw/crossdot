@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@emotion/react"
+import 'prismjs/themes/prism-tomorrow.css'
 import * as React from "react"
 import Footer from "./footer"
 import './layout.module.css'

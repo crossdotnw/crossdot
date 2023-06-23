@@ -1,6 +1,6 @@
 ---
 slug: "about-us"
-date: "2022-11-24"
+date: "2023-06-12"
 title: "Introducing Crossdot!"
 summary: "Your Launchpad to the World of Coding"
 featuredImage: "../images/crossdot_landing.jpg"
@@ -26,11 +26,16 @@ We are always open to suggestions, but understand that even choosing where to ge
 
 Projects in Python include:
 
-*  
+* Building chatbots for social media and email.
+* Controlling the mouse and keyboard using Python to automate boring tasks
+* Data analysis with Python
+* Building AI models using Python
 
 Projects for Javascript include:
 
-* 
+* Generative art using p5.js
+* Building games using JavaScript
+* Building a social network 
 
 
 ## Want to help out?

@@ -11,7 +11,7 @@ const themeOptions = {
         },
     },
     typography: {
-        fontFamily: 'Roboto Slab',
+        fontFamily: 'Raleway',
         h1: {
             fontWeight: 700,
         },
